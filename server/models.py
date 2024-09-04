@@ -29,6 +29,9 @@ class Restaurant(db.Model, SerializerMixin):
 
     # add relationship
     # A Restaurant has many Pizzas through RestaurantPizza
+    # use plural pizzas here and plural rest_pizzas;
+    # back_pop to singular restuarant in RestPizza model, and asso_proxy to singular pizza from RestPizza model
+    
     restaurant_pizzas = db.relationship('RestaurantPizza', back_populates='restaurant', cascade='all, delete-orphan')
     pizzas = association_proxy('restaurant_pizzas', 'pizza')
 
@@ -50,6 +53,9 @@ class Pizza(db.Model, SerializerMixin):
 
     # add relationship
     # A Pizza has many Restaurants through RestaurantPizza
+    # use plurals restaurants here and plural rest_pizzas; 
+    # back_pop to singular pizza in RestPizza model, and asso_proxy to singular rest from RestPizza model
+
     restaurant_pizzas = db.relationship('RestaurantPizza', back_populates='pizza', cascade='all, delete-orphan')
     restaurants = association_proxy('restaurant_pizzas', 'restaurant')
 
@@ -72,6 +78,8 @@ class RestaurantPizza(db.Model, SerializerMixin):
 
     # add relationships
     # A RestaurantPizza belongs to a Restaurant and belongs to a Pizza
+    #singular pizza and restuarnt here back populates to plural rest_pizzas
+
     restaurant = db.relationship('Restaurant', back_populates='restaurant_pizzas')
     pizza = db.relationship('Pizza', back_populates='restaurant_pizzas')
 
