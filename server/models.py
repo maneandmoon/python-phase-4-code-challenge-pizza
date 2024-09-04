@@ -12,22 +12,12 @@ metadata = MetaData(
 
 db = SQLAlchemy(metadata=metadata)
 
-# Update `server/models.py` to establish the model relationships. Since a
-# `RestaurantPizza` belongs to a `Restaurant` and a `Pizza`, configure the model 
-# to cascade deletes.
-#nullbale=false
-# cascade = delete
+# configure the model to cascade deletes.
+# nullbale=false
 # Database-level cascade deletes are set on ForeignKey:
-
-# project_id = Column(
-#     Integer, ForeignKey("project.id", ondelete="CASCADE"), nullable=False
-# )
-# This says: ON DELETE of the row I'm referencing CASCADE and delete this row too. Remember passive_deletes=True!
-
+# example from web
 # ORM-level cascade deletes are set on relationship:
-# tasks = relationship(
-#     "Task", back_populates="project", cascade="all, delete-orphan"
-# )
+# tasks = relationship("Task", back_populates="project", cascade="all, delete-orphan")
 # This says: Cascade the deletion of this object to these related objects.
 
 class Restaurant(db.Model, SerializerMixin):
@@ -43,7 +33,9 @@ class Restaurant(db.Model, SerializerMixin):
     pizzas = association_proxy('restaurant_pizzas', 'pizza')
 
     # add serialization rules
-    serialize_rules = ('-restaurant_pizzas.restaurant', '-restaurant_pizzas.pizza')
+    serialize_rules = ('-restaurant_pizzas.restaurant',)
+    
+    #('-restaurant_pizzas.pizza') removed so that JSON data format properly on postman for OneRestaurant
 
     def __repr__(self):
         return f"<Restaurant {self.name}>"

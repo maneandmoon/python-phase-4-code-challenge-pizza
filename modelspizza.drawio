@@ -1,32 +1,47 @@
 <mxfile host="65bd71144e">
     <diagram id="kpk6HNNSCZr57Rtua9V7" name="Page-1">
-        <mxGraphModel dx="664" dy="491" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1643" dy="459" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="6" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="2" target="3">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="2" value="Restarant" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="13" style="edgeStyle=none;html=1;entryX=0.005;entryY=0.233;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Restaurant" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="50" y="130" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="3" value="RestaurantPizza&lt;br&gt;f/k restaurant_id&lt;br&gt;f/k pizza_id" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="240" y="130" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="260" y="130" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="4" target="3">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
+                <mxCell id="14" style="edgeStyle=none;html=1;entryX=0.997;entryY=-0.033;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="4" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="4" value="Pizza" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="410" y="130" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="480" y="130" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="RestaurantPizza belongs to Resaurant&lt;br&gt;RestaurantPizza belongs to Pizza&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry x="180" y="220" width="230" height="40" as="geometry"/>
+                <mxCell id="7" value="RestaurantPizza belongs to Restaurant&lt;br&gt;RestaurantPizza belongs to Pizza" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="195" y="210" width="230" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="Pizza has many restaurants through RestaurantPizza&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry x="350" y="80" width="310" height="30" as="geometry"/>
+                <mxCell id="8" value="Pizza has many restaurants through RestaurantPizza&lt;br&gt;restaurant_pizzas&lt;br&gt;restaurants&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="50" width="310" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="Restaurant has many pizzas through RestaurantPizza" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry y="80" width="310" height="30" as="geometry"/>
+                <mxCell id="9" value="Restaurant has many pizzas through RestaurantPizza&lt;br&gt;restaurant_pizzas&lt;br&gt;pizzas&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=0;" vertex="1" parent="1">
+                    <mxGeometry x="-10" y="50" width="310" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="many to many relationship b/t Rest and Pizza through RestPizza&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=0;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="260" width="370" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="restaurants" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="220" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="pizzas" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="220" width="60" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
